@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="header row">
+        <div class='index'>Index</div>
+        <div class='value'>Value</div>
+        <div class='change'>Change Net / %</div>
+    </div>
+    <div class="data row" *ngFor="let stock of stocks">    
+        <div class='index'>{{ stock.name }} ({{ stock.symbol }})</div>
+        <div class='value'>{{ stock.currentPrice | currency : '' }}</div>
+        <div class='change' [class]="getClass(stock)">
+            <div *ngIf="stock.priceChange">
+                {{ stock.priceChange | number : '1.2-2' }} 
+                <i class='change-icon'></i>
+                {{ stock.priceChangePercentage | number : '1.2-2' }}%
+            </div>
+        </div>
+    </div>        
+</div>

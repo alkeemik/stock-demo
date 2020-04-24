@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="header">
+        <h2>Stock Market Overiew</h2>
+
+        <div class="day-container">
+            <div class="current-day">
+                Day {{ day }}
+            </div>    
+            <div class="next-day">
+                <a (click)="nextDay()">Next day</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <app-stock-list></app-stock-list>
+    </div>
+    <div class="footer">
+        Data as of {{ getComputedDay() | date:'EEEE, MMMM d, y' }}
+    </div>
+</div>
