@@ -4,6 +4,9 @@
         <div class='value'>Value</div>
         <div class='change'>Change Net / %</div>
     </div>
+    <div class="empty-state data row" *ngIf="stocks.length == 0">
+        <div>No stocks to show at the moment</div>
+    </div>
     <div class="data row" *ngFor="let stock of stocks">    
         <div class='index'>{{ stock.name }} ({{ stock.symbol }})</div>
         <div class='value'>{{ stock.currentPrice | currency : '' }}</div>
